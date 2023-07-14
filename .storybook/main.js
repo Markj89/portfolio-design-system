@@ -5,6 +5,7 @@ const config = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    "@storybook/addon-controls",
   ],
   framework: {
     name: "@storybook/react-webpack5",
@@ -13,5 +14,14 @@ const config = {
   docs: {
     autodocs: "tag",
   },
+  core: {
+    builder: {
+      name: 'webpack5',
+      options: {
+        fsCache: true,
+        lazyCompilation: true,
+      },
+    },
+  }
 };
 export default config;
