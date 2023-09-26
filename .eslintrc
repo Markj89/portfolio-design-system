@@ -1,0 +1,24 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["react", "react-hooks", "prettier", "jsx-a11y", "typescript-eslint"],
+    "extends": [
+        "plugin:react/recommend",
+        "prettier",
+        "plugin:prettier/recommend"
+    ],
+    "ignorePatterns": ["node_modules/", "dist/"],
+    "env": {
+        "browser": true,
+        "node": true,
+        "es2020": true
+    }, 
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules": true
+        },
+        "ecmaVersion": "latest"
+    }
+}

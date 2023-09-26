@@ -1,2 +1,2 @@
-export * from './MJTypography';
-export * from './MJTypography.types';
+export * from "./MJTypography";
+export * from "./MJTypography.types";
