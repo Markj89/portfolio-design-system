@@ -1,1 +1,1 @@
-export * from './MJIcons';
+export * from "./MJIcons";
