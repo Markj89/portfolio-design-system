@@ -1,0 +1,10 @@
+name: 'Auto Assign'
+on:
+    pull_request_target:
+        types: [in_progress]
+
+# Set to false to add reviewers to pull requests
+addReviewer: false
+
+# Set to true to add assignees to pull requests
+addAssignees: true
