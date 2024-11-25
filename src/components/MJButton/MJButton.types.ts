@@ -1,4 +1,6 @@
 import { ButtonProps } from "@mui/material";
+import { GetClasses } from "./../../utils/typeUtils";
+import { useStyles } from "./MJButton";
 
 export interface MJButtonProps extends ButtonProps {
   children: JSX.Element;
@@ -8,4 +10,6 @@ export interface MJButtonProps extends ButtonProps {
   onClick?: () => void;
   color?: "primary" | "secondary" | "error" | "warning" | "success";
   disabled: boolean;
+  capitalize?: boolean;
 }
+export type ButtonClasses = GetClasses<typeof useStyles>;

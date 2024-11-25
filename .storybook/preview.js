@@ -24,6 +24,7 @@ const preview = {
       hideEmpty: true,
     },
     controls: {
+      expanded: true, // Adds the description and default columns
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/,
