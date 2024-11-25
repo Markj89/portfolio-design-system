@@ -60,10 +60,12 @@
   "scripts": {
     "test": "jest --watch",
     "build": "webpack --mode production",
+    "clean": "rimraf dist coverage storybook-static",
+    "coverage": "cross-env BABEL_ENV=test jest --coverage",
     "dev": "webpack --mode development",
     "format": "yarn run prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "yarn run eslint --ext .ts,.tsx.js,.jsx .",
-    "storybook": "yarn run storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "repository": "git+ssh://git@github.com/Markj89/portfolio-design-system.git",

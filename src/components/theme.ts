@@ -29,17 +29,20 @@ const theme = createTheme({
     },
     MuiButton: {
       defaultProps: {},
+      styleOverrides: {}
     },
   },
   typography: {
     fontWeightRegular: "Medium",
-    fontWeightBold: "700",
+    fontWeightBold: "500",
   },
   palette: {
     primary: {
-      main: "#005A59",
-      dark: "#3E3E40",
-      light: "#FDFAF2",
+      main: "#007876",//"#005A59",
+      dark: "#005A59",
+      //dark: "#3E3E40",
+      //light: "#FDFAF2",
+      light: "#FFF8EF"
     },
     secondary: {
       main: "#FDFAF2",
