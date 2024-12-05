@@ -1,7 +1,7 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import MJIcons from "../MJIcons";
-import { AddLocation } from "@mui/icons-material";
+import { AddLocation, Close } from "@mui/icons-material";
 
 export default {
   title: "Atoms/MJIcons",
@@ -9,7 +9,7 @@ export default {
   parameters: { layout: "fullscreen" },
   args: {
     size: "small",
-    children: <AddLocation />,
+    children: [<AddLocation />, <Close />]
   },
   size: {
     description: 'Size of the component, `"small"`  `"medium"`  `"large"` ',

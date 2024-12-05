@@ -1,6 +1,7 @@
 import { createTheme } from "@mui/material";
 
 const theme = createTheme({
+  cssVariables: true,
   breakpoints: {
     values: {
       xs: 0,
@@ -42,10 +43,14 @@ const theme = createTheme({
       dark: "#005A59",
       //dark: "#3E3E40",
       //light: "#FDFAF2",
-      light: "#FFF8EF"
+      light: "#FFF8EF",
+      contrastText: "#4E555E",
     },
     secondary: {
       main: "#FDFAF2",
+      dark: "#222A33",
+      light: "#FFFAF0",
+
     },
     common: {
       black: "#000",
