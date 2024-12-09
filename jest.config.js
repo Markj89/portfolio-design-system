@@ -7,15 +7,12 @@ module.exports = {
         '^.+\\.(j|t)sx?$': 'babel-jest',
     },
     testMatch: [
-        '<rootDir>/src/**/*.test.{js,jsx,ts,tsx}',
-        '<rootDir>/test/**/*.test.{js,jsx,ts,tsx}',
+        '**/src/**/*.test.{js,jsx,ts,tsx}',
+        '**/test/**/*.test.{js,jsx,ts,tsx}',
     ],
-    collectCoverage: true,
+    //collectCoverage: true,
     collectCoverageFrom: [
-        '!<rootDir>/src/components/**/*.{ts,tsx,js,jsx}',
-        '!<rootDir>/src/components/index.ts',
-        '!<rootDir>/src/styles/index.ts',
-        '!<rootDir>/src/components/**/index.ts',
+        '**/src/components/**/*.{ts,tsx,js,jsx}',
     ],
     testPathIgnorePatterns: ['/node_modules/'],
     coverageThreshold: {
@@ -32,6 +29,7 @@ module.exports = {
         '^@mui/styles/(.*)$': '<rootDir>/node_modules/@mui/styles/$1',
     },
     setupFilesAfterEnv: [
+        './node_modules/@testing-library/jest-dom/dist/index.js',
         "./setupTests.js"
     ]
 };
