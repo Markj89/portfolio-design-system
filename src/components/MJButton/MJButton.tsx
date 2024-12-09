@@ -9,14 +9,14 @@ import { Theme, Button } from "@mui/material";
 import { MJButtonProps, ButtonClasses } from "./MJButton.types";
 import clsx from "clsx";
 
-export const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   root: {
     borderRadius: "25px",
     whiteSpace: "nowrap",
     boxSizing: "border-box",
     padding: "10px 20px",
     cursor: "pointer",
-    fontWeight: theme.typography.fontWeightBold,
+    fontWeight: theme?.typography?.fontWeightBold,
     outline: "none",
     verticalAlign: "middle",
     userSelect: "none",
@@ -25,14 +25,14 @@ export const useStyles = makeStyles((theme: Theme) => ({
     letterSpacing: "0.05px",
     borderWidth: "2px",
     textTransform: "capitalize",
-    [theme.breakpoints.down("sm")]: {
+    [theme?.breakpoints?.down("sm")]: {
       width: "100%"
     },
     "&:focus": {
       outline: "none",
     },
     "&:focus-within": {
-      outlineColor: theme.palette.primary.main,
+      outlineColor: theme.palette?.primary.main,
       outlineWidth: "1px",
       outlineOffset: "2px",
       outlineStyle: "dashed"
@@ -44,22 +44,22 @@ export const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   primary: {
-    backgroundColor: theme.palette.primary.main,
-    color: theme.palette.common.white,
+    backgroundColor: theme.palette?.primary.main,
+    color: theme.palette?.common.white,
     "&:hover": {
-      backgroundColor: theme.palette.primary.dark,
+      backgroundColor: theme.palette?.primary.dark,
       outline: "none",
     },
   },
   outlined: {
     backgroundColor: "transparent",
-    borderColor: theme.palette.primary.main,
-    color: theme.palette.primary.main,
+    borderColor: theme.palette?.primary.main,
+    color: theme.palette?.primary.main,
     border: "3px solid",
     "&:hover": {
-      color: theme.palette.primary.dark,
-      backgroundColor: theme.palette.primary.light,
-      borderColor: theme.palette.primary.dark,
+      color: theme.palette?.primary.dark,
+      backgroundColor: theme.palette?.primary.light,
+      borderColor: theme.palette?.primary.dark,
     }
   },
 }));

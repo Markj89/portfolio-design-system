@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles } from "@mui/styles";
 import { Box, Theme, IconButton } from "@mui/material";
 import { Close } from "@mui/icons-material";
 import theme from "../theme";
 import clsx from "clsx";
 
-interface MJTagDisplayProps {
+interface MJTagProps {
     color: "light" | "dark";
-    children: string;
+    children: string | JSX.Element;
     closeButton: boolean;
     onClick?: () => void;
+    [key: string]: any;
 }
 
 export const useStyles = makeStyles((theme: Theme) => ({
@@ -22,14 +23,14 @@ export const useStyles = makeStyles((theme: Theme) => ({
         overflow: "hidden"
     },
     light: {
-        backgroundColor: theme.palette.secondary.light, 
-        borderColor: theme.palette.secondary.light,
-        color: theme.palette.secondary.dark,
+        backgroundColor: theme?.palette?.secondary.light, 
+        borderColor: theme?.palette?.secondary.light,
+        color: theme?.palette?.secondary.dark,
     },
     dark: {
-        backgroundColor: theme.palette.primary.contrastText, 
-        borderColor: theme.palette.primary.contrastText,
-        color: theme.palette.common.white
+        backgroundColor: theme?.palette?.primary.contrastText, 
+        borderColor: theme?.palette?.primary.contrastText,
+        color: theme?.palette?.common.white
     },
     tagItem: {
         display: "inline-block",
@@ -46,7 +47,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
         }
     }
 }));
-const MJTag = ({color, children, closeButton, onClick}: MJTagDisplayProps) => {
+const MJTag = ({color, children, closeButton, onClick}: MJTagProps) => {
     const classes = useStyles({});
     function clickHandler(event: MouseEvent) {
         event.preventDefault();
@@ -55,7 +56,7 @@ const MJTag = ({color, children, closeButton, onClick}: MJTagDisplayProps) => {
     }
 
     return (
-        <Box component={"span"} px={5} sx={{ p: '.5625rem 1rem' }} className={clsx(classes.root, {
+        <Box data-testid="tag-test-id" component={"span"} px={5} sx={{ p: '.5625rem 1rem' }} className={clsx(classes.root, {
             [classes.dark]: color === "dark",
             [classes.light]: color === "light",
           })}>

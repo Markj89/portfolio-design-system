@@ -9,11 +9,12 @@ import clsx from "clsx";
 import { MJTypography } from "../MJTypography";
 import MJTag from "./MJTag";
 
-export const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
     input: {
         flexGrow: 1,
         padding: '10px 10px',
-        border: `1px solid ${theme.palette.secondary.dark}`,
+        border: '1px solid',
+        borderColor: theme?.palette?.secondary.dark,
         borderRadius: "7px",
         outline: 'none'
     },
@@ -28,7 +29,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
         gap: ".5em",
     },
     tag: {
-        padding: '.2625rem 1rem'
+        padding: '.1625rem 1rem'
     }
 }));
 
@@ -36,7 +37,7 @@ interface MJTagsInputProps {
     darkMode: boolean;
 }
 
-function MJTagsInput({ darkMode = false }: MJTagsInputProps) {
+export default function MJTagsInput({ darkMode = false }: MJTagsInputProps) {
     const classes = useStyles({});
     const [tags, setTags] = useState<string[]>([])
 
@@ -69,5 +70,3 @@ function MJTagsInput({ darkMode = false }: MJTagsInputProps) {
         </div>
     )
 }
-
-export default MJTagsInput;
