@@ -66,7 +66,7 @@ export default function MJTagsInput({ darkMode = false }: MJTagsInputProps) {
                     <MJTypography className="text" tag={"span"} color={darkMode ? "white" : "black"} align={"center"} fontWeight="Medium" variant="caption">{inputTag}</MJTypography>
                 </MJTag>
             )) }
-            <input onKeyDown={() => handleKeyDown(event, tags)} type="text" className={clsx("tags-input", classes.input)} placeholder="Type something" />
+            <input onKeyDown={() => handleKeyDown(event, tags)} type="text" className={clsx("tags-input", classes.input)} placeholder="Type something" role="input" />
         </div>
     )
 }

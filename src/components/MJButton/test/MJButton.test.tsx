@@ -3,6 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import MJButton from '../MJButton';
 import { MJButtonProps } from '../MJButton.types';
 import { renderWithTheme } from './../../../testUtils/renderWithTheme';
+import { clickHandler } from '../MJButton.logic';
 import '@testing-library/jest-dom';
 
 const testId = 'Button';
@@ -13,12 +14,9 @@ describe('Button Component', () => {
         expect(screen.getByText('button')).toBeVisible();
     });
 
-    /*it('should click on event ', () => {
-        const event = jest.fn();
-        const wrapper = render(<MJButton data-testid={testId} onClick={event}>button</MJButton>);
-        const button = wrapper.container.querySelector('button') as HTMLButtonElement;
-        fireEvent.click(button);
-        expect(event).toBeCalled();
-        expect(event).toHaveBeenCalledTimes(1);
-    })*/
+    it('should render disabled ', () => {
+        render(<MJButton data-testid={testId} disabled={true}>button</MJButton>);
+        const button = screen.getByRole('button');
+        expect(button).toBeDisabled();
+    });
 });

@@ -2,12 +2,13 @@
  *  MJButton
  *  @type {Component} Button
  */
-import React, { MouseEvent, forwardRef, memo, useRef } from "react";
+import React, { forwardRef, memo, useRef } from "react";
 import { makeStyles } from "@mui/styles";
 import theme from "../theme";
 import { Theme, Button } from "@mui/material";
 import { MJButtonProps, ButtonClasses } from "./MJButton.types";
 import clsx from "clsx";
+import { clickHandler } from "./MJButton.logic";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -64,7 +65,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-
 const MJButton = forwardRef<HTMLButtonElement, MJButtonProps>(
   ({
     variant = "primary",
@@ -76,13 +76,9 @@ const MJButton = forwardRef<HTMLButtonElement, MJButtonProps>(
   }, ref) => {
     const classes = useStyles({});
     const buttonRef = useRef(ref as any);
-    function clickHandler(event: MouseEvent<HTMLButtonElement>) {
-      event.preventDefault();
-      onClick();
-      return false;
-    }
-
+    
     return (
+      // @ts-ignore
       <Button
         ref={buttonRef}
         onMouseDown={clickHandler}
@@ -92,7 +88,6 @@ const MJButton = forwardRef<HTMLButtonElement, MJButtonProps>(
           {
             [classes.primary]: variant === "primary",
             [classes.outlined]: variant === "outlined",
-            //[classes.text]: variant === "text",
           },
         )}
         disabled={disabled ? true : undefined}
