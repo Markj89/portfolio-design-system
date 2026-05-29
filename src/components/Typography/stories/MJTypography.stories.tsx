@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { MJTypography } from "../MJTypography";
+import { MJTypography } from "../Typography";
 
 export default {
   title: "Atoms/MJTypography",

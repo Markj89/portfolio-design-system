@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { makeStyles } from "@mui/styles";
 import { Theme } from "@mui/material";
 import clsx from "clsx";
-import { MJTypography } from "../MJTypography";
+import { MJTypography } from "../Typography";
 import MJTag from "./MJTag";
 
 const useStyles = makeStyles((theme: Theme) => ({

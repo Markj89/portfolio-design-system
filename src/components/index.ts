@@ -1,9 +1,10 @@
-import * as MJButton from "./MJButton";
-import * as MJIcons from "./MJIcons";
-import * as MJTypography from "./MJTypography";
-
+import * as MJButton from "./Button";
+import * as MJIcons from "./Icons";
+import * as MJTypography from "./Typography";
+import * as MJTags from "./Tags";
 export { 
     MJButton,
     MJIcons,
-    MJTypography
+    MJTypography,
+    MJTags
 };

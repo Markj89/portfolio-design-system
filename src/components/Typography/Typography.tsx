@@ -6,7 +6,7 @@
  */
 import React, { FC } from "react";
 import clsx from "clsx";
-import { MJTypographyProps } from "./MJTypography.types";
+import { MJTypographyProps } from "./Typography.types";
 import { Theme, Typography } from "@mui/material";
 import theme from "../theme";
 import { createStyles, makeStyles } from "@mui/styles";

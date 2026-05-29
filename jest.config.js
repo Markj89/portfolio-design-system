@@ -12,12 +12,12 @@ module.exports = {
     ],
     collectCoverage: true,
     collectCoverageFrom: [
-        '!<rootDir>/src/components/**/*.{ts,tsx,js,jsx}',
-        '!<rootDir>/src/components/index.ts',
+        '!<rootDir>/src/components/tests/**/*.{ts,tsx,js,jsx}',
+        // '!<rootDir>/src/components/index.ts',
         '!<rootDir>/src/styles/index.ts',
-        '!<rootDir>/src/components/**/index.ts',
+        // '!<rootDir>/src/components/**/index.ts',
     ],
-    testPathIgnorePatterns: ['/node_modules/'],
+    testPathIgnorePatterns: ['/node_modules/', '/dist/'],
     coverageThreshold: {
         global: {
             branches: 80,

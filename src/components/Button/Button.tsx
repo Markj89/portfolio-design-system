@@ -1,15 +1,13 @@
 /**
- *  MJButton
+ *  Button
  *  @type {Component} Button
  */
 import React, { MouseEvent, forwardRef, memo, useRef } from "react";
-import { makeStyles } from "@mui/styles";
 import theme from "../theme";
-import { Theme, Button } from "@mui/material";
-import { MJButtonProps, ButtonClasses } from "./MJButton.types";
+import { ButtonProps, ButtonClasses } from "./Button.types";
 import clsx from "clsx";
 
-const useStyles = makeStyles((theme: Theme) => ({
+export const useStyles: ButtonClasses = makeStyles((theme: Theme) => ({
   root: {
     borderRadius: "25px",
     whiteSpace: "nowrap",
@@ -64,8 +62,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-
-const MJButton = forwardRef<HTMLButtonElement, MJButtonProps>(
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({
     variant = "primary",
     color = "primary",
@@ -83,7 +80,8 @@ const MJButton = forwardRef<HTMLButtonElement, MJButtonProps>(
     }
 
     return (
-      <Button
+      <button
+        role={'button'}
         ref={buttonRef}
         onMouseDown={clickHandler}
         className={clsx(
@@ -99,8 +97,8 @@ const MJButton = forwardRef<HTMLButtonElement, MJButtonProps>(
         tabIndex={disabled ? -1 : 0}
       >
         {children}
-      </Button>
+      </button>
     );
   },
 );
-export default memo(MJButton);
+export default memo(Button);

@@ -22,7 +22,7 @@
         "emitDecoratorMetadata": true,
         "strict": false,
         "noEmit": true,
-        "types": ["react", "jest"],
+        "types": ["react", "jest", "@testing-library/react"],
     },
     "include": [
         "./test/**/*",

@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import MJButton from "../MJButton";
+import MJButton from "../Button";
 
 export default {
   title: "Atoms/MJButton",

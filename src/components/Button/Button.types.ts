@@ -1,8 +1,7 @@
-import { ButtonProps } from "@mui/material";
-import { GetClasses } from "./../../utils/typeUtils";
-import { useStyles } from "./MJButton";
+import { GetClasses } from "../../utils/typeUtils";
+import { useStyles } from "./Button";
 
-export interface MJButtonProps extends ButtonProps {
+export interface ButtonProps extends ButtonProps {
   children: JSX.Element;
   variant: "contained" | "outlined" | "text";
   active?: boolean;
