@@ -1,0 +1,1 @@
+export type GetClasses<T extends (...args: any) => any> = keyof ReturnType<T>;
