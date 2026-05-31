@@ -1,34 +1,42 @@
 name: Lint
 
 on:
-  push:
-    branches: ["master", "development"]
   pull_request:
-    branches: ["feature/**"]
+    branches:
+      - mastrr
+      - development
+
+  push:
+    branches:
+      - master
+      - development
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
 
-  pre-commit:
-    name: pre-commit
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v6
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: 3.11
+          node-version: ${{ matrix.node-version }}
+          cache: npm
 
-      - name: Cache pre-commit
-        uses: actions/cache@v5
-        with:
-          path: ~/.cache/pre-commit
-          key: pre-commit-3|${{ env.pythonLocation }}|${{ hashFiles('.pre-commit-config.yaml') }}
+      - name: Install Dependencies
+        run: npm ci
 
-      - name: Install pre-commit
-        run: pip3 install pre-commit
-        
-      - name: Run pre-commit
-        run: pre-commit run --all-files --show-diff-on-failure --color always
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Run TypeScript Type Check
+        run: npm run type-check
+
+      - name: Build Storybook
+        run: npm run build-storybook
