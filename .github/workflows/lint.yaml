@@ -3,11 +3,12 @@ name: Lint
 on:
   pull_request:
     branches:
-      - mastrr
+      - master
       - development
 
   push:
     branches:
+      - feature/**
       - master
       - development
 
