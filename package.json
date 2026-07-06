@@ -51,7 +51,7 @@
     "clean": "rimraf dist coverage storybook-static coverage",
     "dev": "vite",
     "format": "prettier --write .",
-    "lint": "npm run eslint --ext .ts,.tsx.js,.jsx .",
+    "lint": "eslint --ext .ts,.tsx.js,.jsx .eslint.config.js",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
