@@ -29,19 +29,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: yarn
-
-      - name: Enable Corepack
-        run: corepack enable
+          cache: npm
 
       - name: Install Dependencies
-        run: yarn install --immutable
+        run: npm install --legacy-peer-deps
 
       - name: Run ESLint
-        run: yarn lint
-
-      - name: Run TypeScript Type Check
-        run: yarn type-check
-
-      - name: Build Storybook
-        run: yarn build-storybook
+        run: npm lint

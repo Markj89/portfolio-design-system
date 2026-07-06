@@ -26,7 +26,7 @@ module.exports = {
             lines: 80,
         },
     },
-    coveragePathIgnorePatterns: ['.stories.tsx', '.d.ts'],
+    coveragePathIgnorePatterns: ['.stories.ts', '.d.ts'],
     moduleNameMapper: {
         '^@mui/material/(.*)$': '<rootDir>/node_modules/@mui/material/$1',
         '^@mui/styles/(.*)$': '<rootDir>/node_modules/@mui/styles/$1',
