@@ -1,6 +1,6 @@
 import { Queries, render, RenderOptions } from '@testing-library/react';
 import * as React from 'react';
-import { createTheme, StyledEngineProvider, ThemeProvider } from '@mui/material';
+import { createTheme, StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
 
 export const theme = createTheme();
 

@@ -1,5 +1,4 @@
-import React from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import MJTagsInput from "../MJTagsInput";
 
 export default {
@@ -16,7 +15,8 @@ type Story = StoryObj<typeof MJTagsInput>;
 
 export const Dark: Story = {
   args: {
-    darkMode: true
+    darkMode: true,
+    appearance: "dark"
   }
 };
 export const Light: Story = {

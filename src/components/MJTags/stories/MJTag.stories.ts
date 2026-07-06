@@ -1,5 +1,4 @@
-import React from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import MJTag from "../MJTag";
 
 export default {
@@ -17,13 +16,13 @@ type Story = StoryObj<typeof MJTag>;
 export const TagDark: Story = {
     args: {
         children: "Dark",
-        color: "dark"
+        appearance: "dark"
     }
 };
 
 export const TagLight: Story = {
     args: {
         children: "Light",
-        color: "light"
+        appearance: "light"
     }
 };

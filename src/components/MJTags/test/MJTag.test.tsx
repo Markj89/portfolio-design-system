@@ -11,10 +11,10 @@ describe("Tag Component", () => {
   it("should render tag component correctly", () => {
     render(
       <ThemeProvider theme={theme}>
-        <MJTag color={"light"} children={"Test"} closeButton={false} />
+        <MJTag appearance={"light"} data-testid={"tag-test-id"} closeButton={false} color="primary">Hello</MJTag>
       </ThemeProvider>,
     );
-    const element = screen.getByTestId("tag-test-id");
+    const element = screen?.getByTestId("tag-test-id");
     expect(element).toBeInTheDocument();
   });
 });

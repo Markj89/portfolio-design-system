@@ -1,16 +1,23 @@
-/** @type { import('@storybook/react').Preview } */
-import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
+/** @type { import('@storybook/react-webpack5').Preview } */
+import React from 'react';
+import { ThemeProvider, CssBaseline } from '@mui/material';
 import { ThemeProvider as EmotionThemeProvider } from '@emotion/react';
-import theme from './../src/components/theme';
+import theme from '../src/theme';
 
 const withThemeProvider = (Story, context) => {
-  return (
-    <EmotionThemeProvider theme={theme}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Story {...context} />
-      </ThemeProvider>
-    </EmotionThemeProvider>
+  return React.createElement(
+    EmotionThemeProvider,
+    { theme },
+    React.createElement(
+      ThemeProvider,
+      {
+        theme,
+        children: [
+          React.createElement(CssBaseline, null),
+          React.createElement(Story, context),
+        ],
+      },
+    ),
   );
 };
 
