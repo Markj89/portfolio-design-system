@@ -27,6 +27,7 @@
     "vitest": "^3.x"
   },
   "devDependencies": {
+    "@eslint/compat": "^2.1.0",
     "@storybook/addon-docs": "^10.4.6",
     "@storybook/addon-links": "^10.4.6",
     "@storybook/react": "^10.4.6",
