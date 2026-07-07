@@ -1,9 +1,8 @@
-import { ButtonProps } from "@mui/material";
-import { GetClasses } from "./../../utils/typeUtils";
-import { useStyles } from "./MJButton";
+import { ButtonProps as MuiButtonProps } from "@mui/material";
+import { ReactNode } from "react";
 
-export interface MJButtonProps extends ButtonProps {
-  children: JSX.Element;
+export interface MJButtonProps extends MuiButtonProps {
+  children: ReactNode;
   variant: "contained" | "outlined" | "text";
   active?: boolean;
   [key: string]: any;
@@ -12,4 +11,3 @@ export interface MJButtonProps extends ButtonProps {
   disabled: boolean;
   capitalize?: boolean;
 }
-export type ButtonClasses = GetClasses<typeof useStyles>;

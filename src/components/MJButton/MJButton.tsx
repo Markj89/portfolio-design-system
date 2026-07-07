@@ -3,78 +3,21 @@
  *  @type {Component} Button
  */
 import React, { MouseEvent, forwardRef, memo, useRef } from "react";
-import { makeStyles } from "@mui/styles";
-import theme from "../theme";
-import { Theme, Button } from "@mui/material";
-import { MJButtonProps, ButtonClasses } from "./MJButton.types";
-import clsx from "clsx";
-
-const useStyles = makeStyles((theme: Theme) => ({
-  root: {
-    borderRadius: "25px",
-    whiteSpace: "nowrap",
-    boxSizing: "border-box",
-    padding: "10px 20px",
-    cursor: "pointer",
-    fontWeight: theme?.typography?.fontWeightBold,
-    outline: "none",
-    verticalAlign: "middle",
-    userSelect: "none",
-    position: "relative",
-    lineHeight: "1.5",
-    letterSpacing: "0.05px",
-    borderWidth: "2px",
-    textTransform: "capitalize",
-    [theme?.breakpoints?.down("sm")]: {
-      width: "100%"
-    },
-    "&:focus": {
-      outline: "none",
-    },
-    "&:focus-within": {
-      outlineColor: theme.palette?.primary.main,
-      outlineWidth: "1px",
-      outlineOffset: "2px",
-      outlineStyle: "dashed"
-    },
-    "&.Mui-disabled, &:disabled": {
-      cursor: "not-allowed",
-      pointerEvents: "none",
-      opacity: "0.44",
-    },
-  },
-  primary: {
-    backgroundColor: theme.palette?.primary.main,
-    color: theme.palette?.common.white,
-    "&:hover": {
-      backgroundColor: theme.palette?.primary.dark,
-      outline: "none",
-    },
-  },
-  outlined: {
-    backgroundColor: "transparent",
-    borderColor: theme.palette?.primary.main,
-    color: theme.palette?.primary.main,
-    border: "3px solid",
-    "&:hover": {
-      color: theme.palette?.primary.dark,
-      backgroundColor: theme.palette?.primary.light,
-      borderColor: theme.palette?.primary.dark,
-    }
-  },
-}));
-
+import Button from "@mui/material/Button";
+import { MJButtonProps } from "./MJButton.types";
 
 const MJButton = forwardRef<HTMLButtonElement, MJButtonProps>(
-  ({
-    variant = "primary",
-    color = "primary",
-    children,
-    className,
-    onClick,
-    disabled = false,
-  }, ref) => {
-    const classes = useStyles({});
+  (
+    {
+      variant = "primary",
+      color = "primary",
+      children,
+      className,
+      onClick,
+      disabled = false,
+    },
+    ref,
+  ) => {
     const buttonRef = useRef(ref as any);
     function clickHandler(event: MouseEvent<HTMLButtonElement>) {
       event.preventDefault();
@@ -84,23 +27,19 @@ const MJButton = forwardRef<HTMLButtonElement, MJButtonProps>(
 
     return (
       <Button
+        variant={variant}
+        color={color}
         ref={buttonRef}
         onMouseDown={clickHandler}
-        className={clsx(
-          classes.root,
-          className,
-          {
-            [classes.primary]: variant === "primary",
-            [classes.outlined]: variant === "outlined",
-            //[classes.text]: variant === "text",
-          },
-        )}
         disabled={disabled ? true : undefined}
         tabIndex={disabled ? -1 : 0}
+        className={className}
       >
         {children}
       </Button>
     );
   },
 );
+
+MJButton.displayName = "MJButton";
 export default memo(MJButton);

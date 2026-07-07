@@ -4,22 +4,11 @@
  *
  * @summary Renders text provided
  */
-import React, { FC } from "react";
-import clsx from "clsx";
+import React, { FC, memo } from "react";
 import { MJTypographyProps } from "./MJTypography.types";
-import { Theme, Typography } from "@mui/material";
-import theme from "../theme";
-import { createStyles, makeStyles } from "@mui/styles";
+import { Typography } from "@mui/material";
 
-export const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      fontFamily: "Asap",
-    },
-  }),
-);
-
-export const MJTypography: FC<MJTypographyProps> = ({
+const MJTypography: FC<MJTypographyProps> = ({
   children,
   align,
   tag,
@@ -27,19 +16,20 @@ export const MJTypography: FC<MJTypographyProps> = ({
   id,
   variant,
   fontWeight,
+  className,
   variantMapping,
 }: MJTypographyProps) => {
-  const classes = useStyles({});
-
   return (
     <Typography
       variant={variant}
       align={align}
       color={color}
       id={id}
-      className={clsx(classes.root)}
+      className={className}
     >
       {children}
     </Typography>
   );
 };
+
+export default memo(MJTypography);
