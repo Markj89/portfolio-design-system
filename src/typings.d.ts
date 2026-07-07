@@ -1,14 +1,11 @@
-import '@mui/material/styles';
-import { Theme } from '@mui/material/styles';
+import "@mui/material/styles";
 
-declare module '@mui/material/styles' {
-    interface Theme extends Theme {} // Add your custom theme properties here
-}
+declare module "@mui/material/styles" {}
 /**
  * Default CSS definition for typescript,
  * will be overridden with file-specific definitions by rollup
  */
-declare module '*.css' {
-    const content: { [className: string]: string };
-    export default content;
+declare module "*.css" {
+  const content: { [className: string]: string };
+  export default content;
 }

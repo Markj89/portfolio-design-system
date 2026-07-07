@@ -1,7 +1,8 @@
-import { ButtonProps as MuiButtonProps, } from "@mui/material";
+import { ButtonProps as MuiButtonProps } from "@mui/material";
+import { ReactNode } from "react";
 
 export interface MJButtonProps extends MuiButtonProps {
-  children: JSX.Element;
+  children: ReactNode;
   variant: "contained" | "outlined" | "text";
   active?: boolean;
   [key: string]: any;

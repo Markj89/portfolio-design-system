@@ -4,11 +4,11 @@ import MJTagsInput from "../MJTagsInput";
 export default {
   title: "Molecules/MJTags/MJTagsInput",
   component: MJTagsInput,
-  parameters: { 
+  parameters: {
     layout: "fullscreen",
     docs: {
-      canvas: { sourceState: 'shown' }
-    }
+      canvas: { sourceState: "shown" },
+    },
   },
 } as Meta<typeof MJTagsInput>;
 type Story = StoryObj<typeof MJTagsInput>;
@@ -16,11 +16,11 @@ type Story = StoryObj<typeof MJTagsInput>;
 export const Dark: Story = {
   args: {
     darkMode: true,
-    appearance: "dark"
-  }
+    appearance: "dark",
+  },
 };
 export const Light: Story = {
   args: {
-    darkMode: false
-  }
+    darkMode: false,
+  },
 };

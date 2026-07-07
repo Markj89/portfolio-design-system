@@ -3,18 +3,21 @@
  *  @type {Component} Button
  */
 import React, { MouseEvent, forwardRef, memo, useRef } from "react";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 import { MJButtonProps } from "./MJButton.types";
 
 const MJButton = forwardRef<HTMLButtonElement, MJButtonProps>(
-  ({
-    variant = "primary",
-    color = "primary",
-    children,
-    className,
-    onClick,
-    disabled = false,
-  }, ref) => {
+  (
+    {
+      variant = "primary",
+      color = "primary",
+      children,
+      className,
+      onClick,
+      disabled = false,
+    },
+    ref,
+  ) => {
     const buttonRef = useRef(ref as any);
     function clickHandler(event: MouseEvent<HTMLButtonElement>) {
       event.preventDefault();
@@ -37,4 +40,6 @@ const MJButton = forwardRef<HTMLButtonElement, MJButtonProps>(
     );
   },
 );
+
+MJButton.displayName = "MJButton";
 export default memo(MJButton);
