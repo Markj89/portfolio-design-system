@@ -4,13 +4,13 @@ import { TagsInput } from "./custom/TagsInput";
 declare module "@mui/material/styles" {
   interface Theme {
     custom: {
-      tagsInput: TagsInput
+      tagsInput: TagsInput;
     };
   }
 
   interface ThemeOptions {
     custom?: {
-      tagsInput?: TagsInput
+      tagsInput?: TagsInput;
     };
   }
 }

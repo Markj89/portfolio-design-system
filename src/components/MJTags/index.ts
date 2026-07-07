@@ -1,2 +1,2 @@
-export * from './MJTagsInput';
-export * from './MJTag';
+export * from "./MJTagsInput";
+export * from "./MJTag";

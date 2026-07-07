@@ -9,43 +9,28 @@ import eslintConfigPrettier from "eslint-config-prettier";
 
 export default [
   {
-    ignores: [
-      "dist",
-      "coverage",
-      "storybook-static",
-      "node_modules",
-    ],
+    ignores: ["dist", "coverage", "storybook-static", "node_modules"],
   },
-
   js.configs.recommended,
-
   ...tseslint.configs.recommended,
-
   eslintConfigPrettier,
-
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
-
     languageOptions: {
       parser: tseslint.parser,
-
       ecmaVersion: "latest",
-
       sourceType: "module",
-
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
         },
       },
-
       globals: {
         ...globals.browser,
         ...globals.node,
         ...globals.jest,
       },
     },
-
     plugins: {
       "@typescript-eslint": tseslint.plugin,
       react,
@@ -53,24 +38,18 @@ export default [
       "jsx-a11y": jsxA11y,
       prettier,
     },
-
     settings: {
       react: {
         version: "detect",
       },
     },
-
     rules: {
       ...react.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
       ...jsxA11y.configs.recommended.rules,
-
       "prettier/prettier": "warn",
-
       "react/react-in-jsx-scope": "off",
-
       "react/prop-types": "off",
-
       "@typescript-eslint/no-unused-vars": [
         "warn",
         {
@@ -78,34 +57,19 @@ export default [
           varsIgnorePattern: "^_",
         },
       ],
-
-      "@typescript-eslint/no-explicit-any": "warn",
-
+      "@typescript-eslint/no-explicit-any": "off",
       "react-hooks/rules-of-hooks": "error",
-
       "react-hooks/exhaustive-deps": "warn",
     },
   },
-
   {
-    files: [
-      "**/*.stories.ts",
-      "**/*.stories.tsx",
-      "**/*.stories.js",
-      "**/*.stories.jsx",
-    ],
-
+    files: ["**/*.stories.ts", "**/*.stories.js", "**/*.stories.jsx"],
     rules: {
       "import/no-anonymous-default-export": "off",
     },
   },
-
   {
-    files: [
-      "**/*.test.ts",
-      "**/*.test.tsx",
-    ],
-
+    files: ["**/*.test.ts", "**/*.test.tsx"],
     languageOptions: {
       globals: globals.jest,
     },

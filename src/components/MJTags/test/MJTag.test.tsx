@@ -11,7 +11,14 @@ describe("Tag Component", () => {
   it("should render tag component correctly", () => {
     render(
       <ThemeProvider theme={theme}>
-        <MJTag appearance={"light"} data-testid={"tag-test-id"} closeButton={false} color="primary">Hello</MJTag>
+        <MJTag
+          appearance={"light"}
+          data-testid={"tag-test-id"}
+          closeButton={false}
+          color="primary"
+        >
+          Hello
+        </MJTag>
       </ThemeProvider>,
     );
     const element = screen?.getByTestId("tag-test-id");

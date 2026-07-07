@@ -1,7 +1,7 @@
-name: 'Auto Assign'
+name: "Auto Assign"
 on:
-    pull_request_target:
-        types: [in_progress]
+  pull_request_target:
+    types: [in_progress]
 
 # Set to false to add reviewers to pull requests
 addReviewer: false
