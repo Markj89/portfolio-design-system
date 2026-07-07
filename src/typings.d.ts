@@ -1,8 +1,6 @@
 import "@mui/material/styles";
 
-declare module "@mui/material/styles" {
-  interface Theme {} // Add your custom theme properties here
-}
+declare module "@mui/material/styles" {}
 /**
  * Default CSS definition for typescript,
  * will be overridden with file-specific definitions by rollup

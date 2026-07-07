@@ -40,4 +40,6 @@ const MJButton = forwardRef<HTMLButtonElement, MJButtonProps>(
     );
   },
 );
+
+MJButton.displayName = "MJButton";
 export default memo(MJButton);

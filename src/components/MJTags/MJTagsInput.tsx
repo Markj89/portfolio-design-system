@@ -16,7 +16,7 @@ export default function MJTagsInput({ darkMode = false }: MJTagsInputProps) {
   const [tags, setTags] = useState<string[]>([]);
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
-    let returnTag = [];
+    const returnTag = [];
     // If user did not press enter key, return
     if (e.key !== "Enter") return;
     // Get the value of the input

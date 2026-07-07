@@ -49,7 +49,10 @@ export default [
       ...jsxA11y.configs.recommended.rules,
       "prettier/prettier": "warn",
       "react/react-in-jsx-scope": "off",
+      "react/display-name": "off",
+      "prefer-const": "off",
       "react/prop-types": "off",
+      "@typescript-eslint/no-empty-object-type": "off",
       "@typescript-eslint/no-unused-vars": [
         "warn",
         {
@@ -66,6 +69,10 @@ export default [
     files: ["**/*.stories.ts", "**/*.stories.js", "**/*.stories.jsx"],
     rules: {
       "import/no-anonymous-default-export": "off",
+      "react/display-name": "off",
+      "prefer-const": "off",
+      "react/prop-types": "off",
+      "@typescript-eslint/no-empty-object-type": "off",
     },
   },
   {
