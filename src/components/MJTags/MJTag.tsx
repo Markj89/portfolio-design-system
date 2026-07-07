@@ -1,7 +1,7 @@
 /**
  * MJTag
  * @type {Component} Tag (Chip)
- * 
+ *
  */
 import React from "react";
 import { Chip } from "@mui/material";
@@ -32,10 +32,20 @@ const MJTag = ({
       label={children}
       data-testid="tag-tag-id"
       component="span"
-      className={clsx("MJTag", 'MJTag--root', `MJTag--${appearance}`, className)}
+      className={clsx(
+        "MJTag",
+        "MJTag--root",
+        `MJTag--${appearance}`,
+        className,
+      )}
       icon={icon}
       onDelete={closeButton ? clickHandler : undefined}
-      deleteIcon={<Close fontSize="small" color={appearance === "dark" ? "info" : "primary" } />}
+      deleteIcon={
+        <Close
+          fontSize="small"
+          color={appearance === "dark" ? "info" : "primary"}
+        />
+      }
       {...props}
     />
   );

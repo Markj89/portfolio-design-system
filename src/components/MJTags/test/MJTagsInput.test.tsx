@@ -14,6 +14,8 @@ describe("Tag Component", () => {
         <MJTagsInput darkMode={false} />
       </ThemeProvider>,
     );
-    await waitFor(() => expect(screen.getAllByPlaceholderText("Type something")).toBeTruthy());
+    await waitFor(() =>
+      expect(screen.getAllByPlaceholderText("Type something")).toBeTruthy(),
+    );
   });
 });

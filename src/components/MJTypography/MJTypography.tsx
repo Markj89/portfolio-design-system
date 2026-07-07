@@ -19,7 +19,6 @@ const MJTypography: FC<MJTypographyProps> = ({
   className,
   variantMapping,
 }: MJTypographyProps) => {
-
   return (
     <Typography
       variant={variant}
