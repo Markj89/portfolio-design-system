@@ -8,6 +8,7 @@ import { Input } from "./components/Input";
 import { Label } from "./components/Label";
 import { OutlinedInput } from "./components/OutlinedInput";
 import { TagsInput } from "./custom/TagsInput";
+import { Tooltip } from "./components/Tooltip";
 
 const theme = createTheme({
   //cssVariables: true,
@@ -24,6 +25,7 @@ const theme = createTheme({
     MuiOutlinedInput: OutlinedInput,
     MuiInput: Input,
     MuiInputLabel: Label,
+    MuiTooltip: Tooltip,
   },
 });
 

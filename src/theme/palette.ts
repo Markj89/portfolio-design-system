@@ -15,7 +15,13 @@ export const palette: PaletteOptions = {
     // contrastText: "#4E555E",
   },
   error: {
-    main: colors.red,
+    main: colors.red[0],
+  },
+  success: {
+    main: colors.green[100]
+  },
+  info: {
+    main: colors.blue[0]
   },
   secondary: {
     main: colors.green[50],
@@ -23,11 +29,8 @@ export const palette: PaletteOptions = {
     // dark: "#222A33",
     light: colors.white,
   },
-  grey: {
-    100: "#a2a2a2",
-  },
   common: {
-    black: colors.black,
+    black: colors.black[100],
     white: colors.white,
   },
   text: {
