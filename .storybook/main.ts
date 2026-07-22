@@ -10,6 +10,9 @@ export default {
       "@storybool/addon-themes",
       "@storybook/addon-links",
     ],
+    core: {
+      disableTelemetry: true,
+    },
     typescript: {
       check: false,
       checkOptions: {},
