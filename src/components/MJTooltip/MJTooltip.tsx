@@ -2,35 +2,34 @@
  * MJTooltip
  * @type {Component} Tooltip
  */
-import React, { useEffect, useRef } from "react";
-import { MJTooltipProps, TOOLTIP_PLACEMENT } from "./MJTooltip.types";
+import React from "react";
 import { Tooltip } from "@mui/material";
-import clsx from "clsx";
+import { MJTooltipProps, TOOLTIP_PLACEMENT, TOOLTIP_VARIANTS } from "./MJTooltip.types";
 
-export const MJTooltip = ({title, variants, children, className, position = TOOLTIP_PLACEMENT.auto, arrow = false }: MJTooltipProps) => {
-    const toolTipRef = useRef<((e: KeyboardEvent) => void | null)>(null);
-
-    useEffect(() => {
-        return () => {
-            if (toolTipRef.current) {
-                document.removeEventListener("keydown", toolTipRef.current);
-                toolTipRef.current = null;
-            }
-        }
-    }, []);
+export const MJTooltip: React.FC<MJTooltipProps> = ({
+    title,
+    variant = TOOLTIP_VARIANTS.default,
+    children,
+    className,
+    position = TOOLTIP_PLACEMENT.auto,
+    arrow = false,
+    ...props
+}) => {
 
     return (
         <Tooltip
+            {...props}
+            variant={variant}
             placement={position}
             title={title}
             arrow={arrow}
-            className={clsx(variants, className)}
+            className={className}
             describeChild={true}
         >
             {children}
         </Tooltip>
     );
-}
+};
 
 MJTooltip.displayName = "MJTooltip";
 export default MJTooltip;

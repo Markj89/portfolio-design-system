@@ -1,20 +1,23 @@
-import { TooltipProps } from "@mui/material";
-import React from "react";
+import type { TooltipProps } from "@mui/material";
+import type { ReactElement } from "react";
 
-export interface MJTooltipProps extends TooltipProps {
+export interface MJTooltipProps extends Omit<TooltipProps, "children"> {
     title: string;
-    children?: React.ReactElement;
+    children?: ReactElement;
     position?: TOOLTIP_PLACEMENT;
     arrow?: boolean;
     className?: string;
-    variants?: TOOLTIP_VARIANTS;
+    variant?: TOOLTIP_VARIANTS | string;
 }
 
 export enum TOOLTIP_VARIANTS {
+    default = "default",
+    primary = "primary",
+    secondary = "secondary",
     warning = "warning",
-    standard = "standard",
-    light = "light",
-    dark = "dark"
+    success = "success",
+    error = "error",
+    info = "info",
 }
 
 export enum TOOLTIP_PLACEMENT {

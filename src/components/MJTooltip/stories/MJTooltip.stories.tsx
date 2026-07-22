@@ -3,7 +3,11 @@ import type { Meta, StoryObj } from "@storybook/react";
 import MJTooltip from "../MJTooltip";
 import { IconButton } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
-import { TOOLTIP_PLACEMENT } from "../MJTooltip.types";
+import WarningIcon from '@mui/icons-material/Warning';
+import HomeIcon from "@mui/icons-material/Home";
+import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
+import NewReleasesIcon from '@mui/icons-material/NewReleases';
+import { TOOLTIP_PLACEMENT, TOOLTIP_VARIANTS } from "../MJTooltip.types";
 
 export default {
     title: "Atoms/MJTooltip/Overview",
@@ -17,7 +21,7 @@ export const Default: Story = {
     args: {
         title: "Delete",
         children: (
-            <IconButton aria-title="delete">
+            <IconButton>
                 <DeleteIcon />
             </IconButton>
         ),
@@ -30,7 +34,7 @@ export const Arrow: Story = {
     args: {
         title: "Delete",
         children: (
-            <IconButton aria-title="delete">
+            <IconButton>
                 <DeleteIcon />
             </IconButton>
         ),
@@ -65,7 +69,7 @@ export const Bottom: Story = {
 
 export const Left: Story = {
     render: (args) => <MJTooltip {...args} />,
-        args: {
+    args: {
         title: "Left",
         children: (
             <p>Left</p>
@@ -77,12 +81,88 @@ export const Left: Story = {
 
 export const Right: Story = {
     render: (args) => <MJTooltip {...args} />,
-        args: {
+    args: {
         title: "Right",
         children: (
             <p>Right</p>
         ),
         position: TOOLTIP_PLACEMENT.right,
+        arrow: true
+    }
+};
+
+
+export const DefaultColor: Story = {
+    render: (args) => <MJTooltip {...args} />,
+    args: {
+        title: "Default",
+        open: true,
+        variant: TOOLTIP_VARIANTS.default,
+        children: (
+            <IconButton>
+                <HomeIcon />
+            </IconButton>
+        ),
+        arrow: true
+    }
+};
+
+export const Secondary: Story = {
+    render: (args) => <MJTooltip {...args} />,
+    args: {
+        title: "Default",
+        open: true,
+        variant: TOOLTIP_VARIANTS.secondary,
+        children: (
+            <IconButton>
+                <HomeIcon />
+            </IconButton>
+        ),
+        arrow: true
+    }
+};
+
+export const Warning: Story = {
+    render: (args) => <MJTooltip {...args} />,
+    args: {
+        title: "Warning!!!!!",
+        open: true,
+        variant: TOOLTIP_VARIANTS.error,
+        children: (
+            <IconButton>
+                <WarningIcon color={TOOLTIP_VARIANTS.error} />
+            </IconButton>
+        ),
+        arrow: true
+    }
+};
+
+export const Success: Story = {
+    render: (args) => <MJTooltip {...args} />,
+    args: {
+        title: "Success!!!!!",
+        open: true,
+        variant: TOOLTIP_VARIANTS.success,
+        children: (
+            <IconButton>
+                <PriorityHighIcon color={TOOLTIP_VARIANTS.success} />
+            </IconButton>
+        ),
+        arrow: true
+    }
+};
+
+export const Info: Story = {
+    render: (args) => <MJTooltip {...args} />,
+    args: {
+        title: "Info",
+        open: true,
+        variant: TOOLTIP_VARIANTS.info,
+        children: (
+            <IconButton>
+                <NewReleasesIcon color={TOOLTIP_VARIANTS.info} />
+            </IconButton>
+        ),
         arrow: true
     }
 };
