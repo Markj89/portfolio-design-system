@@ -9,6 +9,7 @@ export default {
       "@storybook/addon-docs",
       "@storybool/addon-themes",
       "@storybook/addon-links",
+      "@storybook/preset-scss"
     ],
     core: {
       disableTelemetry: true,
