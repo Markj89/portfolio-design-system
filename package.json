@@ -10,7 +10,7 @@
     "@mui/icons-material": "^7.x",
     "@mui/material": "^9.x",
     "@testing-library/dom": "^9.3.1",
-    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/jest-dom": "^7.0.0",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
     "@vitejs/plugin-react": "^5.x",
