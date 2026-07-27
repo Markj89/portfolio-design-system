@@ -73,7 +73,7 @@ export default defineConfig([
     },
 
     rules: {
-      "prettier/prettier": "warn",
+      "prettier/prettier": "off",
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
 

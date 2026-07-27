@@ -1,6 +1,9 @@
 import * as MJButton from "./MJButton";
 import * as MJIcons from "./MJIcons";
 import * as MJInput from "./MJInput";
+import * as MJSegmentControl from "./MJSegmentControl";
+import * as MJTooltip from "./MJTooltip";
 import * as MJTypography from "./MJTypography";
+import * as MJFloatingFooter from "./MJFloatingFooter";
 
-export { MJButton, MJInput, MJIcons, MJTypography };
+export { MJButton, MJFloatingFooter, MJInput, MJIcons, MJSegmentControl, MJTooltip, MJTypography };

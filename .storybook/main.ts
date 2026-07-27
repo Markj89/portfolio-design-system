@@ -1,7 +1,7 @@
 // .storybook/main.ts
 export default {
   stories: ["../src/components/**/stories/*.stories.@(js|jsx|mjs|ts|tsx)"],
-  addons: ["@storybook/addon-essentials"],
+  addons: [],
   framework: {
     name: "@storybook/react-vite",
     options: {},
@@ -9,7 +9,11 @@ export default {
       "@storybook/addon-docs",
       "@storybool/addon-themes",
       "@storybook/addon-links",
+      "@storybook/preset-scss"
     ],
+    core: {
+      disableTelemetry: true,
+    },
     typescript: {
       check: false,
       checkOptions: {},
