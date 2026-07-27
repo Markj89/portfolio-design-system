@@ -34,7 +34,7 @@ const MJSegmentControl = ({ name, segments, selectedValue, className, onChange, 
     }, []);
 
     return (
-        <ToggleButtonGroup exclusive={exclusive} className={className} value={alignment} disabled={disabled} onChange={(_e, val) => handleActiveElement(val, segmentRef)} aria-label={parentAriaLabel}>
+        <ToggleButtonGroup role={"radiogroup"} exclusive={exclusive} className={className} value={alignment} disabled={disabled} onChange={(_e, val) => handleActiveElement(val, segmentRef)} aria-label={parentAriaLabel}>
             {segments?.map(({ childAriaLabel, value, icon, toolTip, label, isDisabled = false, iconRightAligned = false }) => {
                 const isActive = value === selectedValue;
 
@@ -45,7 +45,6 @@ const MJSegmentControl = ({ name, segments, selectedValue, className, onChange, 
                                 {icon}
                             </span>
                         )}
-
                         {label && (
                             <span>
                                 {label}
@@ -55,7 +54,7 @@ const MJSegmentControl = ({ name, segments, selectedValue, className, onChange, 
                             <span role="presentation" aria-hidden={true}>
                                 {icon}
                             </span>
-                        ))}
+                        ))}                        
                     </ToggleButton>
                 );
 

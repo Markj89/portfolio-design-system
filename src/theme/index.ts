@@ -9,9 +9,11 @@ import { Label } from "./components/Label";
 import { OutlinedInput } from "./components/OutlinedInput";
 import { TagsInput } from "./custom/TagsInput";
 import { Tooltip } from "./components/Tooltip";
+import { FloatingFooter } from "./components/FloatingFooter";
+import "./../styles/global.scss";
 
 const theme = createTheme({
-  //cssVariables: true,
+  cssVariables: true,
   breakpoints: breakpoints,
   typography: typography,
   palette: palette,
@@ -26,6 +28,7 @@ const theme = createTheme({
     MuiInput: Input,
     MuiInputLabel: Label,
     MuiTooltip: Tooltip,
+    MuiFab: FloatingFooter,
   },
 });
 

@@ -31,6 +31,7 @@
     "@storybook/addon-docs": "^10.5.0",
     "@storybook/addon-links": "^10.5.4",
     "@storybook/addon-themes": "^10.4.6",
+    "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^10.4.6",
     "@storybook/react-vite": "^10.4.6",
     "@types/jest": "^30.0.0",
@@ -44,6 +45,8 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "globals": "^17.7.0",
+    "sass": "^1.101.6",
+    "sass-embedded": "^1.100.0",
     "typescript": "^5.9.2"
   },
   "scripts": {
