@@ -10,6 +10,7 @@ import { OutlinedInput } from "./components/OutlinedInput";
 import { TagsInput } from "./custom/TagsInput";
 import { Tooltip } from "./components/Tooltip";
 import { FloatingFooter } from "./components/FloatingFooter";
+import { Modal } from "./components/Modal";
 import "./../styles/global.scss";
 
 const theme = createTheme({
@@ -27,6 +28,7 @@ const theme = createTheme({
     MuiOutlinedInput: OutlinedInput,
     MuiInput: Input,
     MuiInputLabel: Label,
+    MuiModal: Modal,
     MuiTooltip: Tooltip,
     MuiFab: FloatingFooter,
   },
