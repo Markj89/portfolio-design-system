@@ -23,6 +23,11 @@ export const decorators = [withThemeProvider];
 const preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
+    options: {
+      storySort: {
+        order: ["Welcome", "Atoms", "Molecules", "Organisms", "Templates"],
+      },
+    },
     dependecies: {
       withStoriesOnly: true,
       hideEmpty: true,

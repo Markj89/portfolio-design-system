@@ -1,22 +1,25 @@
 // .storybook/main.ts
 export default {
-  stories: ["../src/components/**/stories/*.stories.@(js|jsx|mjs|ts|tsx)"],
-  addons: [],
+  stories: [
+    "../src/**/*.mdx",
+    "../src/documentation/**/*.mdx",
+    "../src/components/**/stories/*.stories.@(js|jsx|mjs|ts|tsx)",
+  ],
+  addons: [
+    "@storybook/addon-docs",
+    "@storybook/addon-themes",
+    "@storybook/addon-links",
+    "@storybook/preset-scss",
+  ],
   framework: {
     name: "@storybook/react-vite",
     options: {},
-    addons: [
-      "@storybook/addon-docs",
-      "@storybool/addon-themes",
-      "@storybook/addon-links",
-      "@storybook/preset-scss"
-    ],
-    core: {
-      disableTelemetry: true,
-    },
-    typescript: {
-      check: false,
-      checkOptions: {},
-    },
+  },
+  core: {
+    disableTelemetry: true,
+  },
+  typescript: {
+    check: false,
+    checkOptions: {},
   },
 };
