@@ -8,13 +8,21 @@ export const Modal: Components<Theme>["MuiModal"] = {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            outline: "none",
             padding: theme.spacing(2),
             boxSizing: "border-box",
+            ".mj-modal-focus-container": {
+                outline: "none",
+                "&:focus": {
+                    outline: "none",
+                },
+            },
             ".mj-modal-overlay": {
                 position: "relative",
                 width: "min(100%, 600px)",
                 margin: "0 auto",
                 border: "none",
+                borderRadius: "25px",
                 outline: "none",
                 boxShadow: "none",
                 "&:focus": {
@@ -55,7 +63,8 @@ export const Modal: Components<Theme>["MuiModal"] = {
                 width: "auto !important",
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: "space-between",
+                justifyContent: "end",
+                padding: 0,
             }
         })
     }

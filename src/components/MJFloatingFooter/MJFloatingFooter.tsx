@@ -21,7 +21,6 @@ export const SECTION_LIST = [
             variant: "secondary",
             position: TOOLTIP_PLACEMENT.top,
             arrow: true,
-            className: "bottom-4"
         }
     },
     {
@@ -33,7 +32,6 @@ export const SECTION_LIST = [
             variant: "secondary",
             position: TOOLTIP_PLACEMENT.top,
             arrow: true,
-            className: "bottom-4"
         }
     },
     {
@@ -45,7 +43,6 @@ export const SECTION_LIST = [
             variant: "secondary",
             position: TOOLTIP_PLACEMENT.top,
             arrow: true,
-            className: "bottom-4"
         }
     },
     {
@@ -57,7 +54,6 @@ export const SECTION_LIST = [
             variant: "secondary",
             position: TOOLTIP_PLACEMENT.top,
             arrow: true,
-            className: "bottom-4"
         }
     }
 ];
@@ -79,7 +75,7 @@ const MJFloatingFooter = (props: MJFloatingFooterProps) => {
         mouseOffset: externalMouseOffset,
         mouseContainer = null,
         className = "",
-        padding = "12px 32px",
+        padding = "5px 32px",
         overLight = false,
         style = {},
         mode = "standard",
@@ -89,7 +85,7 @@ const MJFloatingFooter = (props: MJFloatingFooterProps) => {
     const glassRef = useRef<HTMLDivElement>(null)
     const [isHovered, setIsHovered] = useState(false)
     const [isActive, setIsActive] = useState(false)
-    const [glassSize, setGlassSize] = useState({ width: 270, height: 69 })
+    const [glassSize, setGlassSize] = useState({ width: 270, height: 50 })
     const [internalGlobalMousePos, setInternalGlobalMousePos] = useState({ x: 0, y: 0 })
     const [internalMouseOffset, setInternalMouseOffset] = useState({ x: 0, y: 0 })
 
@@ -231,7 +227,7 @@ const MJFloatingFooter = (props: MJFloatingFooterProps) => {
 
     const baseStyle = {
         ...style,
-        transform: transformStyle,
+        //transform: transformStyle,
         transition: "all ease-out 0.2s",
     };
 

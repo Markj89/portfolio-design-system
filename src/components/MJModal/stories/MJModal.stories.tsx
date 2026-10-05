@@ -20,8 +20,9 @@ const meta: Meta<typeof MJModal> = {
 export default meta;
 
 type Story = StoryObj<typeof meta>;
+type MJModalStoryArgs = Omit<ComponentProps<typeof MJModal>, "aria-label" | "aria-labelledby">;
 
-function MJModalStory(args: ComponentProps<typeof MJModal>) {
+function MJModalStory(args: MJModalStoryArgs) {
   const [open, setOpen] = useState<boolean>(true);
 
   function closeHandler() {
@@ -49,7 +50,7 @@ function MJModalStory(args: ComponentProps<typeof MJModal>) {
       >
         <MJModalOverlay overlay>
           <MJModalHead onRequestClose={closeHandler}>
-            <MJModalHeader color="black" variant={"h6"} tag={"span"} id="default">
+            <MJModalHeader color="black" variant="h6" id="mj-modal-title">
               Default Title
             </MJModalHeader>
           </MJModalHead>

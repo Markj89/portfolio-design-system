@@ -1,25 +1,50 @@
 import { fireEvent, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
+import userEvent from "@testing-library/user-event";
 import { MJModal } from "../MJModal";
+import { MJModalHead } from "../MJModalHead/MJModalHead";
+import { MJModalHeader } from "../MJModalHeader/MJModalHeader";
 import { renderWithTheme } from "./../../../testUtils/renderWithTheme";
 import { vi } from "vitest";
 
 describe("MJModal Component", () => {
   it("renders its children when open", () => {
     renderWithTheme(
-      <MJModal open={true} onClose={vi.fn()}>
-        <div>Modal content</div>
+      <MJModal open={true} onClose={vi.fn()} aria-labelledby="modal-title">
+        <h2 id="modal-title">Modal content</h2>
       </MJModal>,
     );
 
-    expect(screen.getByText("Modal content")).toBeVisible();
+    expect(screen.getByRole("dialog", { name: "Modal content" })).toBeVisible();
+    expect(screen.getByRole("heading", { level: 2, name: "Modal content" })).toBeVisible();
+    expect(screen.getByRole("dialog")).toHaveAttribute("aria-modal", "true");
+  });
+
+  it("renders a semantic header and an operable close button", async () => {
+    const user = userEvent.setup();
+    const onRequestClose = vi.fn();
+
+    renderWithTheme(
+      <MJModal open={true} onClose={vi.fn()} aria-labelledby="modal-title">
+        <MJModalHead onRequestClose={onRequestClose}>
+          <MJModalHeader color="black" variant="h6" id="modal-title">
+            Modal title
+          </MJModalHeader>
+        </MJModalHead>
+      </MJModal>,
+    );
+
+    expect(document.body.querySelector("header")).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "Close dialog" }));
+
+    expect(onRequestClose).toHaveBeenCalledTimes(1);
   });
 
   it("calls onClose when escape is pressed", async () => {
     const onClose = vi.fn();
 
     renderWithTheme(
-      <MJModal open={true} onClose={onClose}>
+      <MJModal open={true} onClose={onClose} aria-label="Test modal">
         <div>Modal content</div>
       </MJModal>,
     );
@@ -40,7 +65,7 @@ describe("MJModal Component", () => {
     const onClose = vi.fn();
 
     renderWithTheme(
-      <MJModal open={true} onClose={onClose}>
+      <MJModal open={true} onClose={onClose} aria-label="Test modal">
         <div>Modal content</div>
       </MJModal>,
     );
@@ -63,7 +88,7 @@ describe("MJModal Component", () => {
 
   it("does not render children when closed", () => {
     renderWithTheme(
-      <MJModal open={false} onClose={vi.fn()}>
+      <MJModal open={false} onClose={vi.fn()} aria-label="Test modal">
         <div>Modal content</div>
       </MJModal>,
     );
