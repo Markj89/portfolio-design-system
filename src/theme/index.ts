@@ -1,5 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 import { palette } from "./palette";
+import { colors } from "./colors";
 import { breakpoints } from "./breakpoints";
 import { typography } from "./typography";
 import { buttonTheme } from "./components/Button";
@@ -18,6 +19,7 @@ const theme = createTheme({
   cssVariables: true,
   breakpoints: breakpoints,
   typography: typography,
+  colors: colors,
   palette: palette,
   custom: {
     tagsInput: TagsInput,
