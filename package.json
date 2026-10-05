@@ -2,13 +2,20 @@
   "name": "portfolio-design-system",
   "version": "1.0.0",
   "description": "A React Design System for my Portfolio",
-  "main": "index.js",
+  "main": "./src/index.tsx",
+  "exports": {
+    ".": "./src/index.tsx",
+    "./next": "./src/next.tsx",
+    "./styles/global.scss": "./src/styles/global.scss"
+  },
   "private": true,
   "dependencies": {
+    "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^7.x",
     "@mui/material": "^9.x",
+    "@mui/material-nextjs": "^9.4.0",
     "@testing-library/dom": "^9.3.1",
     "@testing-library/jest-dom": "^7.0.0",
     "@testing-library/react": "^14.0.0",

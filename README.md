@@ -29,6 +29,56 @@ npm run storybook
 
 I use design tokens created from my personal Figma and matched in the storybook theme folder.
 
+### Next.js App Router
+
+The package provides `MJNextAppRouterProvider` from the `portfolio-design-system/next` entry point. Keep the provider in the consuming application's root layout so MUI styles are collected during App Router streaming:
+
+```tsx
+import { MJNextAppRouterProvider } from "portfolio-design-system/next";
+import "portfolio-design-system/styles/global.scss";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+	return (
+		<html lang="en">
+			<body>
+				<MJNextAppRouterProvider>{children}</MJNextAppRouterProvider>
+			</body>
+		</html>
+	);
+}
+```
+
+`MJProjectPage` is a presentation template that accepts a serializable `project` object. Keep data loading and prerendering in the consuming Next.js route; the design system does not own a data source or route. For example:
+
+```tsx
+import { MJProject } from "portfolio-design-system";
+
+export async function generateStaticParams() {
+	const projects = await getProjects();
+	return projects.map(({ slug }) => ({ slug }));
+}
+
+export default async function ProjectRoute({
+	params,
+}: {
+	params: Promise<{ slug: string }>;
+}) {
+	const { slug } = await params;
+	const project = await getProjectBySlug(slug);
+	return <MJProject.MJProjectPage project={project} />;
+}
+```
+
+When consuming the unpublished source package from a Next.js application, install it through the workspace or a local `file:` dependency, configure `portfolio-design-system` in Next.js `transpilePackages`, and make sure `sass` is installed because the shared theme imports the design-system SCSS base styles.
+
+```ts
+const nextConfig = {
+	transpilePackages: ["portfolio-design-system"],
+};
+
+export default nextConfig;
+```
+
 ### Production
 
 ```

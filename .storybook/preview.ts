@@ -3,6 +3,7 @@ import React from "react";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import theme from "../src/theme";
+import "../src/styles/global.scss";
 
 const withThemeProvider = (Story, context) => {
   return React.createElement(
