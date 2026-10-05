@@ -3,7 +3,6 @@ import { Theme, Components } from "@mui/material";
 export const OutlinedInput: Components<Theme>["MuiOutlinedInput"] = {
   styleOverrides: {
     root: ({ theme }) => ({
-      fontSize: theme.typography.body1.fontSize,
       fontFamily: "inherit",
       fontSize: "0.9rem",
       transition: "border-color 0.2s",

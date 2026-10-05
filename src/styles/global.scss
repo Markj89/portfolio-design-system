@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+    --border-width-default: 1px;
+    --border-width-button: 2px;
+    --border-width-checkbox: 2px;
+    --border-width-drop-zone: 2px;
+    --border-width-marked: 3px;
+    --border-width-selectable: 2px;
+    --border-width-spinner: 2px;
+    --border-width-tag: 2px;
+    --border-radius-none: 0;
+    --border-radius-small: 0.2rem;
+    --border-radius-medium: 0.4rem;
+    --border-radius-large: 0.6rem;
+    --border-radius-extra-large: 1rem;
+    --border-radius-extra-extra-large: 1.6rem;
+    --border-radius-rounded: 50%;
+    --color-transparent: rgba(0, 0, 0, 0);
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+}
+.bottom-1 {
+    bottom: 1px;
+}
+.bottom-2 {
+    bottom: 2px;
+}
+
+.bottom-3 {
+    bottom: 3px;
+}
+
+.bottom-4 {
+    bottom: 4px;
+}
+.bottom-5 {
+    bottom: 5px;
+}
+
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.pointer-events-none {
+    pointer-events: none;
+}

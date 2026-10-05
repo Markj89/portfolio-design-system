@@ -6,7 +6,8 @@
     "target": "ES2022",
     "lib": ["es5", "es6", "es7", "es2017", "dom"],
     "allowJs": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
     "moduleResolution": "Bundler",
     "noUnusedParameters": true,
     "forceConsistentCasingInFileNames": true,
@@ -27,7 +28,8 @@
     "./test/**/*",
     "./src/**/*",
     "./src/**/tests/*.tsx",
-    "./src/**/stories/*.ts"
+    "./src/**/stories/*.ts",
+    "./src/**/stories/*.tsx"
   ],
   "exclude": ["node_modules"]
 }
