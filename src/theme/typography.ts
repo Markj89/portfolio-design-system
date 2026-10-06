@@ -43,7 +43,7 @@ export const typography: TypographyOptions = {
   h6: {
     fontFamily: headingFontFamily,
     fontWeight: 500,
-    fontSize: "1.6rem",
+    fontSize: "1rem",
     lineHeight: 1.3,
   },
   body1: {

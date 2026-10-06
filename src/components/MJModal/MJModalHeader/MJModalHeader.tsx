@@ -1,13 +1,12 @@
 import React from "react";
-import clsx from "clsx";
 import MJTypography from "../../MJTypography/MJTypography";
 import { MJTypographyProps } from "../../MJTypography";
 
-export interface MJModalHeadProps extends Pick<MJTypographyProps, "color" | "id" | "tag" | "variant"> {
+export interface MJModalHeaderProps extends Pick<MJTypographyProps, "color" | "id" | "variant"> {
     children?: React.ReactNode;
-    id?: string;
+    tag?: "h1" | "h2" | "h3" | "h4";
 }
-export const MJModalHeader = ({ children, id, tag, color, variant }: MJModalHeadProps) => 
+export const MJModalHeader = ({ children, id, tag = "h2", color, variant }: MJModalHeaderProps) =>
 (
     <MJTypography variant={variant} fontWeight="Bold" color={color} tag={tag} id={id}>
         {children}

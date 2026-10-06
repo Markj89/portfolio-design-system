@@ -7,8 +7,11 @@ interface OverlayProps extends BoxProps {
     children: React.ReactNode;
 }
 
-export const MJModalOverlay = ({children, overlay}: OverlayProps) => (
-    <Box className={clsx(overlay ? "mj-modal-overlay" : "mj-modal-non-overlay")}>
+export const MJModalOverlay = ({children, overlay, className, ...props}: OverlayProps) => (
+    <Box
+        {...props}
+        className={clsx(overlay ? "mj-modal-overlay" : "mj-modal-non-overlay", className)}
+    >
         {children}
     </Box>
 );

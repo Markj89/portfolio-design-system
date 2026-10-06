@@ -15,13 +15,12 @@ export const Primary: Story = {
   args: {
     primary: true,
     variant: "contained",
-    color: "primary",
     label: "Button",
     children: "This a button",
   },
 };
 
-export const Secondary: Story = {
+export const Outlined: Story = {
   globals: {
     backgrounds: { value: "#333333" }, // Force dark background for this specific story
   },
@@ -32,9 +31,7 @@ export const Secondary: Story = {
     },
   },
   args: {
-    variant: "contained",
-    secondary: true,
-    color: "secondary",
+    variant: "outlined",
     label: "Button",
     children: "This a button",
   },

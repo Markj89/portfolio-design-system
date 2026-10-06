@@ -6,8 +6,8 @@ export interface MJModalContentProps extends BoxProps {
     children: React.ReactNode;
 }
 
-export const MJModalContent = ({ children }: MJModalContentProps) => (
-    <Box className={clsx("mj-modal-content")}>
+export const MJModalContent = ({ children, className, ...props }: MJModalContentProps) => (
+    <Box {...props} className={clsx("mj-modal-content", className)}>
         {children}
     </Box>
 )

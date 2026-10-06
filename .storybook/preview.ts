@@ -3,6 +3,7 @@ import React from "react";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import theme from "../src/theme";
+import "../src/styles/global.scss";
 
 const withThemeProvider = (Story, context) => {
   return React.createElement(
@@ -22,6 +23,11 @@ export const decorators = [withThemeProvider];
 const preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
+    options: {
+      storySort: {
+        order: ["Welcome", "Atoms", "Molecules", "Organisms", "Templates"],
+      },
+    },
     dependecies: {
       withStoriesOnly: true,
       hideEmpty: true,

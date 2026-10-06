@@ -15,10 +15,10 @@ export const buttonTheme: Components<Theme>["MuiButton"] = {
       boxSizing: "border-box",
       padding: "10px 20px",
       cursor: "pointer",
-      //fontWeight: theme?.typography?.fontWeightBold,
       outline: "none",
       verticalAlign: "middle",
       userSelect: "none",
+      fontWeight: 600,
       position: "relative",
       lineHeight: "1.5",
       letterSpacing: "0.05px",
@@ -43,27 +43,26 @@ export const buttonTheme: Components<Theme>["MuiButton"] = {
       },
     }),
 
-    containedPrimary: ({ theme }) => ({
+    contained: ({ theme }) => ({
       backgroundColor: theme.palette?.primary.main,
-      color: theme.palette?.text.secondary,
+      color: theme.palette.common.white,
 
       "&:hover": {
-        backgroundColor: colors.green[0],
-        color: theme.palette.secondary.light,
+        backgroundColor: theme.colors.green[200],
+        color: theme.palette.common.white,
         outline: "none",
       },
       "&:active": {},
     }),
-
-    containedSecondary: ({ theme }) => ({
+    outlined: ({ theme }) => ({
       backgroundColor: "transparent",
       borderColor: theme.palette.primary.main,
       color: theme.palette.primary.main,
-      border: "3px solid",
+      border: `2px solid ${theme.palette.primary.main}`,
       "&:hover": {
-        color: colors.green[0],
-        backgroundColor: theme.palette.primary.light,
-        borderColor: colors.green[0],
+        color: colors.green[200],
+        borderColor: theme.colors.green[200],
+        outline: "none",
       },
     }),
   },

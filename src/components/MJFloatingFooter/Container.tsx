@@ -22,8 +22,8 @@ export const Container = forwardRef<HTMLDivElement, React.PropsWithChildren<Cont
       active = false,
       overLight = false,
       borderRadius = 999,
-      padding = "12px 32px",
-      glassSize = { width: 270, height: 69 },
+      padding = "5px 32px",
+      glassSize = { width: 270, height: 50 },
       onClick,
       mode = "standard",
     },
@@ -71,6 +71,7 @@ export const Container = forwardRef<HTMLDivElement, React.PropsWithChildren<Cont
           className={clsx("glass")}
           style={{
             borderRadius: `${borderRadius}px`,
+            boxSizing: "border-box",
             position: "relative",
             display: "inline-flex",
             alignItems: "center",
@@ -78,7 +79,7 @@ export const Container = forwardRef<HTMLDivElement, React.PropsWithChildren<Cont
             padding,
             overflow: "hidden",
             transition: "all 0.2s ease-in-out",
-            boxShadow: overLight ? "0px 16px 70px rgba(0, 0, 0, 0.75)" : "0px 12px 40px rgba(0, 0, 0, 0.25)",
+            boxShadow: overLight ? "0px 16px 70px rgba(0, 0, 0, 0.75)" : "0px 12px 40px rgba(0, 0, 0, 0.28)",
           }}
         >
           <span

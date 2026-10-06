@@ -1,5 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 import { palette } from "./palette";
+import { colors } from "./colors";
 import { breakpoints } from "./breakpoints";
 import { typography } from "./typography";
 import { buttonTheme } from "./components/Button";
@@ -11,14 +12,20 @@ import { TagsInput } from "./custom/TagsInput";
 import { Tooltip } from "./components/Tooltip";
 import { FloatingFooter } from "./components/FloatingFooter";
 import { Modal } from "./components/Modal";
-import "./../styles/global.scss";
+import { MJProjectCardTheme } from "./components/MJProjectCard";
+import { MJProjectPageTheme } from "./components/MJProjectPage";
 
 const theme = createTheme({
   cssVariables: true,
   breakpoints: breakpoints,
   typography: typography,
+  colors: colors,
   palette: palette,
-  custom: TagsInput,
+  custom: {
+    tagsInput: TagsInput,
+    mjProjectCard: MJProjectCardTheme,
+    mjProjectPage: MJProjectPageTheme,
+  },
   shape: {
     borderRadius: "4px",
   },

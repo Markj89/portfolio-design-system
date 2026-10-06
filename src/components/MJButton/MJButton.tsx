@@ -9,7 +9,7 @@ import { MJButtonProps } from "./MJButton.types";
 const MJButton = forwardRef<HTMLButtonElement, MJButtonProps>(
   (
     {
-      variant = "primary",
+      variant = "contained",
       color = "primary",
       children,
       className,
