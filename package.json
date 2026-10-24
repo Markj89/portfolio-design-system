@@ -28,7 +28,7 @@
     "prop-types": "^15.7.2",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "storybook": "^10.4.6",
+    "storybook": "^10.6.3",
     "vite": "^7.x",
     "vitest": "^3.x"
   },
