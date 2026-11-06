@@ -22,12 +22,12 @@ export const MJProjectPageTheme = {
     width: "100%",
     aspectRatio: "16 / 9",
     objectFit: "cover",
-    borderRadius: 2,
+    borderRadius: theme.radii.md,
     bgcolor: "action.hover",
     mb: { xs: 3, md: 5 },
     [theme.breakpoints.down("sm")]: {
       aspectRatio: "4 / 3",
-      borderRadius: 1.5,
+      borderRadius: theme.radii.sm,
     },
   }),
   metadata: (theme: Theme) => ({

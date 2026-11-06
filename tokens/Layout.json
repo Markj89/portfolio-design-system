@@ -1,0 +1,64 @@
+{
+  "breakpoints": {
+    "values": {
+      "xs": {
+        "$type": "number",
+        "$value": 0,
+        "$extensions": {
+          "com.figma.variableId": "VariableID:2124:16",
+          "com.figma.hiddenFromPublishing": true,
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        }
+      },
+      "sm": {
+        "$type": "number",
+        "$value": 600,
+        "$extensions": {
+          "com.figma.variableId": "VariableID:2124:18",
+          "com.figma.hiddenFromPublishing": true,
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        }
+      },
+      "md": {
+        "$type": "number",
+        "$value": 960,
+        "$extensions": {
+          "com.figma.variableId": "VariableID:2124:19",
+          "com.figma.hiddenFromPublishing": true,
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        }
+      },
+      "lg": {
+        "$type": "number",
+        "$value": 1280,
+        "$extensions": {
+          "com.figma.variableId": "VariableID:2124:20",
+          "com.figma.hiddenFromPublishing": true,
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        }
+      },
+      "xl": {
+        "$type": "number",
+        "$value": 1920,
+        "$extensions": {
+          "com.figma.variableId": "VariableID:2124:21",
+          "com.figma.hiddenFromPublishing": true,
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ]
+        }
+      }
+    }
+  },
+  "$extensions": {
+    "com.figma.modeName": "03 Layout"
+  }
+}

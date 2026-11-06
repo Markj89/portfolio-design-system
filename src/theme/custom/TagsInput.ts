@@ -3,7 +3,7 @@ import { Theme } from "@mui/material/styles";
 export const TagsInput = {
   container: (theme: Theme) => ({
     padding: ".5em",
-    borderRadius: theme.shape.borderRadius,
+    borderRadius: theme.radii.sm,
     width: "min(80vw, 600px)",
     marginTop: "1em",
     display: "flex",
@@ -16,7 +16,7 @@ export const TagsInput = {
     padding: "10px 10px",
     border: "1px solid",
     borderColor: theme?.palette?.secondary.dark,
-    borderRadius: "7px",
+    borderRadius: theme.radii.sm,
     outline: "none",
   }),
 };

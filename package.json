@@ -45,6 +45,7 @@
     "@types/react": "19.2.17",
     "@typescript-eslint/eslint-plugin": "^8.62.0",
     "@typescript-eslint/parser": "^8.64.0",
+    "chromatic": "^18.11.0",
     "eslint": "^9.39.4",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-jsx-a11y": "^6.10.2",
@@ -54,6 +55,7 @@
     "globals": "^17.7.0",
     "sass": "^1.101.6",
     "sass-embedded": "^1.100.0",
+    "style-dictionary": "^5.6.0",
     "typescript": "^5.9.2"
   },
   "scripts": {
@@ -62,6 +64,7 @@
     "coverage": "vitest --coverage",
     "preview": "vite preview",
     "build": "vite build",
+    "build-tokens": "npx style-dictionary build",
     "clean": "rimraf dist coverage storybook-static coverage",
     "dev": "vite",
     "format": "prettier --write .",
