@@ -1,5 +1,4 @@
 import { Components, Theme } from "@mui/material/styles";
-import { colors } from "../colors";
 
 export const Chip: Components<Theme>["MuiChip"] = {
   defaultProps: {

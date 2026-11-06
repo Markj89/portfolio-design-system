@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material/styles";
+import tokens from "./tokens";
 import { palette } from "./palette";
 import { colors } from "./colors";
 import { breakpoints } from "./breakpoints";
@@ -27,7 +28,12 @@ const theme = createTheme({
     mjProjectPage: MJProjectPageTheme,
   },
   shape: {
-    borderRadius: "4px",
+    borderRadius: tokens.border.radius.sm.$value,
+  },
+  radii: {
+    sm: tokens.border.radius.sm.$value,
+    md: tokens.border.radius.md.$value,
+    lg: tokens.border.radius.lg.$value,
   },
   components: {
     MuiButton: buttonTheme,

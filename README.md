@@ -29,6 +29,8 @@ npm run storybook
 
 I use design tokens created from my personal Figma and matched in the storybook theme folder.
 
+See the [design-token workflow](./docs/tokens.md) for the Figma export process, naming conventions, and contribution checklist.
+
 ### Next.js App Router
 
 The package provides `MJNextAppRouterProvider` from the `portfolio-design-system/next` entry point. Keep the provider in the consuming application's root layout so MUI styles are collected during App Router streaming:

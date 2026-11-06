@@ -5,10 +5,10 @@ export const MJProjectCardTheme = {
     overflow: "hidden",
     border: "1px solid",
     borderColor: "divider",
-    borderRadius: 2,
+    borderRadius: theme.radii.md,
     bgcolor: "background.paper",
     [theme.breakpoints.down("sm")]: {
-      borderRadius: 1.5,
+      borderRadius: theme.radii.sm,
     },
   }),
   image: (theme: Theme) => ({
