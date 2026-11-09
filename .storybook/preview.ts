@@ -25,7 +25,7 @@ const preview = {
     actions: { argTypesRegex: "^on[A-Z].*" },
     options: {
       storySort: {
-        order: ["Welcome", "Atoms", "Molecules", "Organisms", "Templates"],
+        order: ["Welcome", ["Home", "GettingStarted"], "Atoms", "Molecules", "Organisms", "Templates"],
       },
     },
     dependecies: {
