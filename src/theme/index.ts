@@ -15,6 +15,7 @@ import { FloatingFooter } from "./components/FloatingFooter";
 import { Modal } from "./components/Modal";
 import { MJProjectCardTheme } from "./components/MJProjectCard";
 import { MJProjectPageTheme } from "./components/MJProjectPage";
+import { MJNavigationTheme } from "./components/MJNavigation";
 
 const theme = createTheme({
   cssVariables: true,
@@ -44,6 +45,7 @@ const theme = createTheme({
     MuiModal: Modal,
     MuiTooltip: Tooltip,
     MuiFab: FloatingFooter,
+    MuiAppBar: MJNavigationTheme,
   },
 });
 
