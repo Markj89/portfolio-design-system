@@ -70,7 +70,8 @@
     "format": "prettier --write .",
     "lint": "eslint --ext .ts,.tsx.js,.jsx .",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "repository": "git+ssh://git@github.com/Markj89/portfolio-design-system.git",
   "keywords": [
