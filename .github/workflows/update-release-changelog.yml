@@ -1,4 +1,4 @@
-name: Update Changelog
+name: Release - Update Changelog
 
 on:
   pull_request:
@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   update-changelog:
-    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'development')
+    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release/')
     runs-on: ubuntu-latest
 
     steps:
@@ -26,10 +26,9 @@ jobs:
           ref: master
           fetch-depth: 0
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+
+      - name: Setup Node & Dependencies
+        uses: ./.github/actions/setup-node-deps
 
       - name: Install changelog generator
         run: npm install --global generate-changelog

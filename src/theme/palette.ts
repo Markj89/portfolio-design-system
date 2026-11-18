@@ -3,38 +3,36 @@ import { colors } from "./colors";
 
 export const palette: PaletteOptions = {
   primary: {
-    main: colors.green[100],
-    light: colors.light,
-    dark: colors.dark,
-    contrastText: colors.white,
-    // main: "#007876",//"#005A59",
-    // dark: "#005A59",
-    // //dark: "#3E3E40",
-    // //light: "#FDFAF2",
-    // light: "#FFF8EF",
-    // contrastText: "#4E555E",
+    main: colors.brand.primary,
+    light: colors.neutral.light,
+    dark: colors.green[200],
+    contrastText: colors.neutral.light,
   },
   error: {
-    main: colors.red[0],
+    main: colors.red[100],
+    light: colors.red[50],
+    dark: colors.red[100],
+    contrastText: colors.red[200],
   },
   success: {
-    main: colors.green[100]
+    main: colors.green[100],
+    light: colors.green[0],
+    dark: colors.green[200],
+    contrastText: colors.green[50],
   },
   info: {
-    main: colors.blue[0]
+    main: colors.blue[0],
   },
   secondary: {
     main: colors.green[50],
-    // main: "#FDFAF2",
-    // dark: "#222A33",
-    light: colors.white,
+    light: colors.common.white,
   },
   common: {
-    black: colors.black[100],
-    white: colors.white,
+    black: colors.common.black,
+    white: colors.common.white,
   },
   text: {
-    primary: colors.dark,
-    secondary: colors.light,
+    primary: colors.common.black,
+    secondary: colors.common.white,
   },
 };

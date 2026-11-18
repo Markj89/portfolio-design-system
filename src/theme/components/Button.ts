@@ -1,5 +1,4 @@
 import { Components, Theme } from "@mui/material/styles";
-import { colors } from "../colors";
 
 export const buttonTheme: Components<Theme>["MuiButton"] = {
   defaultProps: {
@@ -10,7 +9,7 @@ export const buttonTheme: Components<Theme>["MuiButton"] = {
 
   styleOverrides: {
     root: ({ theme }) => ({
-      borderRadius: "25px",
+      borderRadius: theme.radii.lg,
       whiteSpace: "nowrap",
       boxSizing: "border-box",
       padding: "10px 20px",
@@ -48,7 +47,7 @@ export const buttonTheme: Components<Theme>["MuiButton"] = {
       color: theme.palette.common.white,
 
       "&:hover": {
-        backgroundColor: theme.colors.green[200],
+        backgroundColor: theme.palette.primary.dark,
         color: theme.palette.common.white,
         outline: "none",
       },
@@ -60,8 +59,8 @@ export const buttonTheme: Components<Theme>["MuiButton"] = {
       color: theme.palette.primary.main,
       border: `2px solid ${theme.palette.primary.main}`,
       "&:hover": {
-        color: colors.green[200],
-        borderColor: theme.colors.green[200],
+        color: theme.palette.primary.dark,
+        borderColor: theme.palette.primary.dark,
         outline: "none",
       },
     }),

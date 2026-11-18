@@ -1,18 +1,14 @@
-name: Lint
+name: CI - Lint & Test
 
 on:
   pull_request:
     branches:
       - master
-      - feature/**
-      - bugFix/**
       - development
 
   push:
     branches:
       - master
-      - feature/**
-      - bugFix/**
       - development
 
 jobs:
@@ -27,14 +23,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: npm
-
-      - name: Install Dependencies
-        run: npm install --legacy-peer-deps
+      - name: Setup Node & Dependencies
+        uses: ./.github/actions/setup-node-deps
 
       - name: Run Tests
         run: npm run test

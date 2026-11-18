@@ -1,0 +1,36 @@
+name: "Build Tokens"
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'tokens/**.json'
+      - 'config.js'
+      - 'package.json'
+
+  pull_request:
+    branches:
+      - master
+    paths:
+      - 'tokens/**.json'
+      - 'config.js'
+
+jobs:
+  build-tokens:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node & Dependencies
+        uses: ./.github/actions/setup-node-deps
+
+      - name: Build tokens
+        run: npm run build-tokens
+        
+      - name: Verify generated tokens are committed
+        run: git diff --exit-code -- src/theme/tokens.ts

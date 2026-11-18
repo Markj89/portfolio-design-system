@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material/styles";
+import tokens from "./tokens";
 import { palette } from "./palette";
 import { colors } from "./colors";
 import { breakpoints } from "./breakpoints";
@@ -14,6 +15,7 @@ import { FloatingFooter } from "./components/FloatingFooter";
 import { Modal } from "./components/Modal";
 import { MJProjectCardTheme } from "./components/MJProjectCard";
 import { MJProjectPageTheme } from "./components/MJProjectPage";
+import { MJNavigationTheme } from "./components/MJNavigation";
 
 const theme = createTheme({
   cssVariables: true,
@@ -27,7 +29,12 @@ const theme = createTheme({
     mjProjectPage: MJProjectPageTheme,
   },
   shape: {
-    borderRadius: "4px",
+    borderRadius: tokens.border.radius.sm.$value,
+  },
+  radii: {
+    sm: tokens.border.radius.sm.$value,
+    md: tokens.border.radius.md.$value,
+    lg: tokens.border.radius.lg.$value,
   },
   components: {
     MuiButton: buttonTheme,
@@ -38,6 +45,7 @@ const theme = createTheme({
     MuiModal: Modal,
     MuiTooltip: Tooltip,
     MuiFab: FloatingFooter,
+    MuiAppBar: MJNavigationTheme,
   },
 });
 

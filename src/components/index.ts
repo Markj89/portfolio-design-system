@@ -8,5 +8,6 @@ import * as MJFloatingFooter from "./MJFloatingFooter";
 import * as MJModal from "./MJModal";
 import * as MJProfilePicture from "./MJProfilePicture";
 import * as MJProject from "./MJProject";
+import * as MJNavigation from "./MJNavigation";
 
-export { MJButton, MJFloatingFooter, MJInput, MJIcons, MJSegmentControl, MJModal, MJProfilePicture, MJProject, MJTooltip, MJTypography };
+export { MJButton, MJFloatingFooter, MJInput, MJIcons, MJSegmentControl, MJModal, MJNavigation, MJProfilePicture, MJProject, MJTooltip, MJTypography };
