@@ -1,3 +1,5 @@
+#### 1.0.0 (2026-11-18)
+
 - #96 Added and updated Modal Component (4289df1)
 - Bump js-yaml from 4.3.0 to 4.3.2 (8107839)
 - Bump baseline-browser-mapping from 2.10.42 to 2.11.22 (b8aed16)
