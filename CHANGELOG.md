@@ -1,3 +1,5 @@
+#### 1.0.0 (2026-11-25)
+
 #### 1.0.0 (2026-11-18)
 
 - #96 Added and updated Modal Component (4289df1)
