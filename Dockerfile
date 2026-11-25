@@ -6,7 +6,7 @@ WORKDIR /app
 # Install dependencies
 COPY package.json ./
 # RUN la -la /app npm install --legacy-peer-deps && npm run test
-RUN npm ci
+RUN npm install --legacy-peer-deps
 
 COPY . .
 RUN npm run build-storybook
