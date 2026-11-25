@@ -5,11 +5,15 @@ on:
     branches:
       - master
       - development
+      - feature/*
+      - bugFix/*
+      - hotFix/*
 
   push:
     branches:
       - master
       - development
+      - release/*
 
 jobs:
   lint:

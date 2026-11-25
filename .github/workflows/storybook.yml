@@ -20,16 +20,10 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: npm
+        uses: actions/checkout@v7
           
       - name: Install Dependencies
-        run: npm install --legacy-peer-deps
+        uses: ./.github/actions/setup-node-deps
 
       - name: Build Storybook
         run: npm run build-storybook
